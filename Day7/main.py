@@ -1,7 +1,12 @@
-# Hangman
+# main.py
+
+"""
+Hangman Game
+
+main.py -- contains game logic.
+"""
 
 import random
-
 
 
 word_list = ['apple', 'ball', 'camel']
