@@ -14,5 +14,14 @@ def encrypt(text, shift):
         encoded_text += alphabet[position]
     print(f"The encoded text is {encoded_text}")
 
+def decrypt(text, shift):
+    decoded_text = ""
+    for letter in text:
+        position = alphabet.index(letter) - shift
+        decoded_text += alphabet[position]
+    print(f"The decoded text is {decoded_text}")
+
 if direction == "encode":
     encrypt(text, shift)
+elif direction == "decode":
+    decrypt(text, shift)
