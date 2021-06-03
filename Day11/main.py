@@ -2,8 +2,8 @@
 
 ############### Our Blackjack House Rules #####################
 
-## The deck is unlimited in size. 
-## There are no jokers. 
+## The deck is unlimited in size.
+## There are no jokers.
 ## The Jack/Queen/King all count as 10.
 ## The the Ace can count as 11 or 1.
 ## Use the following list as the deck of cards:
@@ -18,8 +18,10 @@ import os
 
 logo = art.logo
 
+
 def clear():
     _ = os.system("cls")
+
 
 def deal_card():
     '''Returns a random card from deck!'''
@@ -45,16 +47,17 @@ def compare(user_score, computer_score):
     else:
         return "You lose 😠"
 
+
 def calculate_score(cards):
     '''Returns score calculated from cards.'''
 
     if sum(cards) == 21 and len(cards) == 2:
         return 0
-    
+
     if 11 in cards and sum(cards) > 21:
         cards.remove(11)
         cards.append(1)
-    
+
     return sum(cards)
 
 
@@ -76,7 +79,6 @@ def game():
         print(f"\tYour cards: {user_cards}, current score: {user_score}")
         print(f"\tOpponent's first card: {computer_cards[0]}")
 
-
         if user_score == 0 or computer_score == 0 or user_score > 21:
             gameover = True
         else:
@@ -89,11 +91,15 @@ def game():
     while computer_score != 0 and computer_score < 17:
         computer_cards.append(deal_card())
         computer_score = calculate_score(computer_cards)
-    
+
     print(f"\tYour final hand: {user_cards}, final score: {user_score}")
-    print(f"\tOpponent's final hand: {computer_cards}, final score: {computer_score}")
+    print(
+        f"\tOpponent's final hand: {computer_cards}, final score: {computer_score}"
+    )
     print(f"\n\t{compare(user_score, computer_score)}")
 
-while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == 'y':
+
+while input(
+        "Do you want to play a game of Blackjack? Type 'y' or 'n': ") == 'y':
     clear()
     game()
