@@ -87,7 +87,7 @@ def game():
                 gameover = True
 
     while computer_score != 0 and computer_score < 17:
-        computer_score.append(deal_card())
+        computer_cards.append(deal_card())
         computer_score = calculate_score(computer_cards)
     
     print(f"\tYour final hand: {user_cards}, final score: {user_score}")
