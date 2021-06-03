@@ -14,8 +14,12 @@
 
 import random
 import art
+import os
 
 logo = art.logo
+
+def clear():
+    _ = os.system("cls")
 
 def deal_card():
     '''Returns a random card from deck!'''
@@ -91,4 +95,5 @@ def game():
     print(f"\n\t{compare(user_score, computer_score)}")
 
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == 'y':
+    clear()
     game()
